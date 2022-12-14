@@ -57,14 +57,6 @@ async def index():
 
 
 if __name__ == '__main__':
-    
-    try:
-        train_pipeline = TrainPipeline()
-        logging.info("Start running the pipeline")
-        train_pipeline.run_pipeline()
-    except Exception as e:
-        print(e)
-        logging.exception(e)
-    #app_run(app,host=APP_HOST,port=APP_PORT)        
+    app_run(app,host=APP_HOST,port=APP_PORT)        
 
 
