@@ -88,6 +88,7 @@ jobs:
       # - name: Stop and remove sensor-fault-docker-image-storage container if running
       #   run: |
       #    docker ps -q --filter "name=sensor-fault-docker-image-storage" | grep -q . && docker stop sensor-fault-docker-image-storage && docker rm -fv sensor-fault-docker-image-storage
+
        
       - name: Run Docker Image to serve users
         run: |
