@@ -89,7 +89,8 @@ jobs:
       #   run: |
       #    docker ps -q --filter "name=sensor-fault-docker-image-storage" | grep -q . && docker stop sensor-fault-docker-image-storage && docker rm -fv sensor-fault-docker-image-storage
 
-       
+
+
       - name: Run Docker Image to serve users
         run: |
          docker run -d -p 80:8080 --name=sensor-fault-docker-image-storage -e 'MONGO_DB_URL=${{ secrets.MONGO_DB_URL }}' -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
